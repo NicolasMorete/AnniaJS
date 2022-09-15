@@ -1,0 +1,25 @@
+{
+  "name": "anniajs",
+  "version": "1.0.0",
+  "description": "<h1> Anniajs Repositorio</h1>",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss scss/annia.scss css/styles.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolasMorete/AnniaJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicolasMorete/AnniaJS/issues"
+  },
+  "homepage": "https://github.com/NicolasMorete/AnniaJS#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.19"
+  }
+}
