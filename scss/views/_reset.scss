@@ -1,0 +1,9 @@
+//CONFIGURACIÓN EN COMÚN PARA TODO EL SITIO
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: $color-fondo;
+    width: 100%;
+}

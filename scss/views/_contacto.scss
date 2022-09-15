@@ -1,0 +1,75 @@
+//VISTA DE CONTACTO
+.maincontacto {
+    @include flex (column, center, center);
+    width: 100%;
+    .contacto {
+        width: 100%;
+        .subti {
+            font-size: 1.5rem;
+        }
+        .gridcontacto {
+            border: solid black;
+            display: grid;
+            gap: 20px;
+            justify-content: space-evenly;
+            width: 100%;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(6 , 50px);
+            grid-template-areas:
+            "nombre asunto"
+            "camnom camasu"
+            "apelli mensaje"
+            "camape cammen"
+            "correo cammen"
+            "camcor enviar";
+            input {
+                background-color: $fondo-transparente;
+            }
+            select {
+                background-color: $fondo-transparente;
+            }
+            textarea {
+                background-color: $fondo-transparente;
+            }
+            .nombre{
+                grid-area: nombre;
+            }
+            .ingnombre {
+                grid-area: camnom;
+            }
+            .apellido {
+                grid-area: apelli;
+            }
+            .ingapellido {
+                grid-area: camape;
+            }
+            .correo{
+                grid-area: correo;
+            }
+            .ingcorreo {
+                grid-area: camcor;
+            }
+            .consu {
+                grid-area: asunto;
+            }
+            .ingconsu {
+                grid-area: camasu;
+            }
+            .mensaje {
+                grid-area: mensaje;
+            }
+            .ingmensaje {
+                grid-area: cammen;
+            }
+            .enviar {
+                width: 50px;
+                grid-area: enviar;
+            }
+        }
+    }
+    .locales {
+        .iframelocal {
+            width: 100%;
+        }
+    }
+}

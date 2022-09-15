@@ -1,0 +1,64 @@
+//FOOTER APLICANDO GRID Y FLEX
+.gridfooter {
+    width: 100%;
+    background-color: rgb(115, 143, 102);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "logo    logo    logo"
+    "iframe  redes   info";
+    .gridhijo1 {
+        width: 100%;
+        grid-area: logo;
+        align-items: center;
+        text-align: center;
+        .logofooter {
+            width: 320px;
+            }
+    }
+    .gridhijo2 {
+        grid-area: iframe;
+        text-align: center;
+        .iframemaps {
+            width: 100%;
+           }
+        }
+    .gridhijo3 {
+        @include flex (column, space-evenly, center);
+        width: 100%;
+        grid-area: redes;
+        align-content: center;
+        .footerletra {
+            font-size: 1.5rem;
+        }
+        .redes {
+            @include flex (row ,space-evenly, center);
+            list-style: none;
+            align-items: center;
+            width: 100%;
+            .imgredes {
+                width: 35px;
+                }
+            }
+        }
+     .gridhijo4 {
+        @include flex (column, center, center);
+        width: 100%;
+        grid-area: info;
+        flex-wrap: wrap;
+        li{
+           list-style: none;
+         }
+        p {
+           font-size: large;
+           font-family: sans-serif;
+           font-style: italic; 
+           padding-bottom: 1rem;
+           color: $color-negro;
+        }
+        a {
+           text-decoration: none;
+        }
+     }
+   }

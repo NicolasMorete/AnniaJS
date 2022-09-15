@@ -1,0 +1,41 @@
+//OFF CANVAS DE BOOSTRAP
+.offcanvas {
+    &-title {
+        width: 300px;
+    }
+    .form-control {
+        background-color: $fondo-transparente;
+    }
+    .form-check-input{
+        &:checked {
+            background-color: $color-negro;
+        }   
+    }
+    .btn {
+        border-color: black;
+        color: $color-negro;
+        width: auto;
+        height: 40px;
+        background-color: $fondo-transparente;
+        &-primary {
+             --bs-btn-bg: $color-negro;
+             --bs-btn-hover-bg: $color-negro;
+             --bs-btn-border-color: black;
+             --bs-btn-hover-border-color: black;
+             --bs-btn-active-bg: $color-negro;      
+           }
+        &-outline-success {
+             --bs-btn-hover-bg: $fondo-transparente;
+             --bs-btn-hover-border-color : black;
+             --bs-btn-hover-color: $color-negro;
+             --bs-btn-active-bg: none;
+        }
+   }
+    .offcanvasolv{
+        padding-top: 15px;
+    }
+    .letrasnegras {   
+        color: $color-negro;
+        text-decoration-color: $color-negro;
+    }
+}

@@ -1,0 +1,184 @@
+// --------MEDIA QUERIES TABLET--------
+@media (min-width: 577px) and (max-width:991px) {
+    body {
+        .mainflex {
+            .menues {
+                width: 25%;
+                .menucolores{
+                    .colores {
+                        p{
+                            font-size: $tamano-chico;
+                        }
+                    }
+                    .variantecolores{  
+                        font-size: $tamano-mediano;
+                    }
+                }
+                .menutalles{
+                    .talles {
+                        p{
+                            font-size: $tamano-chico;
+                        }
+                    }
+                }
+                    .variantetalles{
+                        font-size: $tamano-mediano; 
+                }
+            }
+            .imageneslenceria{
+                justify-content: center;
+                grid-template-columns: repeat(12, 1fr);
+                grid-template-rows:repeat(3, 1fr);
+                width: 100%;
+                .imglenc {
+                    width: 100%;
+                }
+                &_grid {
+                    width: 100%;
+                    &:nth-of-type(1) {
+                        grid-column: 2/7;
+                    }
+                    &:nth-of-type(2) {
+                        grid-column: 7/12;
+                    }
+                    &:nth-of-type(3) {
+                        grid-column: 2/7;
+                        grid-row: 2;
+                    }
+                    &:nth-of-type(4) {
+                        grid-column: 7/12;
+                        grid-row: 2;
+                    }
+                    &:nth-of-type(5) {
+                        grid-column: 2/7;
+                        grid-row: 3;
+                    }
+                    &:nth-of-type(6) {
+                        grid-column: 7/12;
+                        grid-row: 3;
+                    }
+                }
+            }
+        }
+        .articulo {
+            &_flex {
+                flex-wrap: wrap;
+                &_hijo3 {
+                    align-items:center;
+                }
+            }
+        }
+        .maincontacto {
+            .contacto {
+                .gridcontacto {
+                    @include flex (column, none, none);
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .gridfooter {
+        .gridhijo3 {
+            .redes {
+                flex-direction: column;
+                gap: $tamano-chico;
+            }
+        }
+    }   
+}
+// --------MEDIA QUERIES MOBILE--------
+@media (min-width: 320px) and (max-width:576px) {
+    body {
+        header {
+            flex-direction: column;
+        }
+        .mainflex {
+            justify-content: flex-end;
+            text-align: start;
+            width: 100%;
+            .menues {
+                align-items: flex-start;
+                width: 33%;  
+                .menucolores {
+                    padding-left: 10px;
+                    .colores {
+                        font-size: $tamano-chico;
+                    }
+                    .variantecolores{
+                        font-size: $tamano-mediano;
+                    }
+                } 
+                .menutalles {
+                    padding-left: 10px;
+                    .talles {
+                        font-size: $tamano-chico;
+                    }
+                    .variantetalles {
+                        font-size: $tamano-mediano;
+                    }
+                }
+                .ideallink {
+                    width: 70px;
+                    font-size: $tamano-mediano;
+                }
+            }
+            .imageneslenceria {
+                @include flex (column, none, none);
+                .imglenc {
+                    width: 100%;
+                    padding-right: 10px;
+                    gap: 15px;
+                }
+            }
+        }
+        .articulo {
+            &_flex {
+                flex-wrap: wrap;
+                gap: 5px;
+                &_hijo3 {
+                    align-items:center;
+                }
+            }
+        }
+        .maincontacto {
+            .contacto {
+                .gridcontacto {
+                    @include flex (column, none, none);
+                    width: 100%;
+                }
+            }
+        }
+    .offcanvas {
+        &-header {
+            .offcanvas-title {
+                width: 100%;
+            }
+        }
+    }
+    .offcanvas-start.show {
+        width: 250px;
+    }
+    }
+    .gridfooter {
+        width: 100%;
+        @include flex (column, none, center);
+        gap: 25px;
+        .gridhijo1 {
+            .logofooter{
+                width: 310px;
+            }
+        }
+        .gridhijo2 {
+            .iframemaps {
+                width: 175px;
+                height: 250px;
+            }
+        }
+        .gridhijo3 {
+            .redes {
+                @include flex (column, none, none);
+                gap:2rem ;
+            }
+        }
+    } 
+}
