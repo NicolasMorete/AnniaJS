@@ -34,6 +34,9 @@ body {
     --bs-btn-focus-shadow-rgb:$color-negro ;
     --bs-btn-active-border-color: black; }
 
+.boton {
+  width: 150px; }
+
 header {
   display: flex;
   justify-content: center; }
@@ -254,6 +257,7 @@ main {
       flex-direction: column;
       justify-content: none;
       text-align: center;
+      align-items: center;
       width: 100%; }
       main .imageneslenceria_grid:nth-of-type(1) {
         grid-column: 1/5; }

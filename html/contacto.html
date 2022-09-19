@@ -49,7 +49,7 @@
             </li>
           </ul>
           <form class=" barrabusqueda d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+            <input id="buscar" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Buscar</button>
               <div></div>
           </form>
@@ -68,16 +68,16 @@
     <nav class="contacto">
     <!-- FORMULARIO DE CONTACTO -->
     <h1 class="subti">Completa el formulario y nos pondremos en contacto contigo</h1>
-    
+    <form id="formulario">
     <fieldset class="gridcontacto">
             <label class="nombre" for="nombre">Nombre</label>
-            <input class="ingnombre" type="text"name="nombre" id="=nombre" placeholder="Ingresa tu nombre" required>
+            <input class="ingnombre" type="text"name="nombre" id="nombre" placeholder="Ingresa tu nombre" required>
             <label class="apellido" for="apellido">Apellido</label>
             <input class="ingapellido" type="text"name="apelido" id="apellido" placeholder="Ingresa tu apellido" required>
-            <label class="correo" for="correo electronico">Correo electronico</label>
-            <input class="ingcorreo" type="text"name="correo electronico" id="correo electronico" placeholder="Ingresa tu email" required>
-            <label class="consu" for="tipo de consulta">Asunto</label>
-            <select class="ingconsu" name="Tipo de consulta" id="tipo de consulta">
+            <label class="correo" for="correoe">Correo electronico</label>
+            <input class="ingcorreo" type="text"name="correo electronico" id="correoe" placeholder="Ingresa tu email" required>
+            <label class="consu" for="tipodeconsulta">Asunto</label>
+            <select class="ingconsu" name="Tipo de consulta" id="tipodeconsulta">
                 <option value="Compras minoristas">Compras por menor</option required>
                 <option value="Compras mayoristas">Compras por mayor</option required>
                 <option value="Error en la compra">Error en la compra</option required>
@@ -159,6 +159,7 @@
 
   </div> 
   </footer>
+  <script src="../js/annia.js"></script>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>

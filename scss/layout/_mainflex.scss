@@ -164,6 +164,7 @@ main {
         }
         &_grid{
             @include flex (column, none, center);
+            align-items: center;
             width: 100%;
             &:nth-of-type(1) {
                 grid-column: 1/5;
