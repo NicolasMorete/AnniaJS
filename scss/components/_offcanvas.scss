@@ -39,3 +39,14 @@
         text-decoration-color: $color-negro;
     }
 }
+.offcanvas.show{
+    width: 400px;
+    .card{
+        width: 100%;
+        align-items: center;
+        .imgcarrito{
+            width: 150px;
+            height: 170px;
+        }
+    }
+}

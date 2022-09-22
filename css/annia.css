@@ -116,6 +116,15 @@ header {
   color: #000;
   text-decoration-color: #000; }
 
+.offcanvas.show {
+  width: 400px; }
+  .offcanvas.show .card {
+    width: 100%;
+    align-items: center; }
+    .offcanvas.show .card .imgcarrito {
+      width: 150px;
+      height: 170px; }
+
 .pagination .page-link {
   color: #000;
   background-color: transparent; }

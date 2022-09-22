@@ -53,22 +53,22 @@ class Producto {
     }
 }
 // CREANDO PRODUCTOS
-const corpiñoLoto = new Producto (1, "loto", "negro", 2500, 2);
-const corpiñoCatalina = new Producto (2, "catalina", "negro", 2400, 2);
-const corpiñoMagnolia = new Producto (3, "magnolia", "negro", 3000, 2);
+const corpiñoLoto = new Producto (1, "Corpiño Loto", "negro", "$2500", 2);
+const corpiñoCatalina = new Producto (2, "Corpiño Catalina", "negro", "$2400", 2);
+const corpiñoMagnolia = new Producto (3, "Corpiño Magnolia", "negro", "$3000", 2);
 
 const corpiños = [corpiñoLoto, corpiñoCatalina, corpiñoMagnolia];
 
 
 const agregaralcarritoloto = document.getElementById("agregaralcarritoloto");
 agregaralcarritoloto.addEventListener("click", () => {
-        agregarAlCarrito(id);
+        agregarAlCarrito(corpiñoLoto);
     })
 const carrito = [];
 
 const agregarAlCarrito = (id) => {
-    const producto = corpiños.find(producto => producto.id === id);
-    const carritoDeProducto = carrito.find(producto => producto.id === id);
+    const producto = corpiños.find(producto => Producto.id === id);
+    const carritoDeProducto = carrito.find(producto =>Producto.id === id);
     if(carritoDeProducto) {
         carritoDeProducto.cantidad++;
     }else {
@@ -77,27 +77,29 @@ const agregarAlCarrito = (id) => {
     actualizarCarrito();
 }
 
-const verCarrito = document.getElementById("carritodecompra")
+const verCarrito = document.getElementById("offcanvasRight")
 verCarrito.addEventListener("click", actualizarCarrito);
 function actualizarCarrito() {
     let aux="";
     carrito.forEach(producto => {
         aux += `
-                    <img src="img/${producto.id}.jpg">
-                    <div>
-                        <h3 class="card-title"> ${producto.nombre} </h3>
-                        <p class="card-text"> ${producto.precio} </p>
-                        <button onClick = "eliminarDelCarrito(${producto.id})" class="btn btn-primary"> Eliminar del Carrito </button>
-                    </div>
-                `
+        <div class="card">
+            <img class="imgcarrito" src="../img/nuevasesion/braletteloto2.jpg">
+            <div class="">
+                <h3 class="card-title"> ${corpiñoLoto.nombre} </h3>
+                <p class="card-text"> ${corpiñoLoto.precio} </p>
+                <button onClick = "eliminarDelCarrito(${Producto.id})" class="btn btn-primary boton"> Eliminar del Carrito </button>
+            </div>
+        </div>
+        `;   
     })
 
-    contenedorCarrito.innerHTML = aux;
-    calcularTotalCompra();
+    offcanvasRight.innerHTML = aux;
+    calcularTotalCarrito();
 }
 
 const eliminarDelCarrito = (id) => {
-    const producto = carrito.find(producto => producto.id === id);
+    const producto = carrito.find(producto => Producto.id === id);
     carrito.splice(carrito.indexOf(producto),1);
     actualizarCarrito();
 }
@@ -112,7 +114,7 @@ const totalCarrito = document.getElementById("totalCarrito");
 const calcularTotalCarrito = () => {
     let total = 0; 
     carrito.forEach( producto => {
-        total += producto.precio * producto.cantidad;
+        total += Producto.precio * Producto.cantidad;
     });
     totalCarrito.innerHTML = total;
 }
