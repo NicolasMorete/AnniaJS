@@ -52,6 +52,7 @@
               <form class=" barrabusqueda d-flex" role="search">
                 <input id="buscar" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Buscar</button>
+                <button type="button" class="btn carritobtn" id="carritodecompra" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><span ><img class="carrito" src="../img/carrito.png" alt="carrito"></span></button>
                   <div></div>
               </form>
             </div>
@@ -87,7 +88,7 @@
               </div>
               <div class="articulo_flex_hijo3">
                 <h1 class="producttitle">Corpiño Bralette Loto</h1>
-                <p class="productprice">$2.000,00</p>
+                <p id="precioloto" class="productprice"></p>
                 <h2>Color</h2>
                 <div class="selec_color">
                     <span class="color_negro" data-fields="Negro"></span>
@@ -106,11 +107,11 @@
                 <h3 class="description">Corpiño Loto tipo bralette de puntilla y forro de lycra</h3>
                 <div class="ideallink">
                     <li> <a href="./curvadetalles.html"> Conocé tu talle ideal</a></li></div>
-                <button type="button" class="btn btn-light">Añadir al carrito</button>
+                <button id="agregaralcarritoloto" type="button" class="btn btn-light">Añadir al carrito</button>
               </div>
         </div>
 
-       
+
        <!-- DESPLEGABLE OFF CANVAS PARA INICIAR SESIÓN -->
  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header">
@@ -140,7 +141,18 @@
     </div>
   </div>
 </div>
+<!-- OFF CANVAS PARA CARRITO COMPRAS -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">Tu carrito de compras</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <button class="btn boton" id="vaciarCarrito">Vaciar Carrito</button>
+    </div>
+  </div>
 </main>
+  
 <!-- FOOTER --> 
 <footer class="gridfooter">
   <div class="gridhijo1">

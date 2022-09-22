@@ -37,6 +37,13 @@ body {
 .boton {
   width: 150px; }
 
+.carrito {
+  width: 35px;
+  height: 30px; }
+
+.carritobtn {
+  border: none; }
+
 header {
   display: flex;
   justify-content: center; }
