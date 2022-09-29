@@ -36,16 +36,16 @@ const corpiñoCatalina = new Producto (2, "Corpiño Catalina", "negro", "$2400",
 const corpiñoMagnolia = new Producto (3, "Corpiño Magnolia", "negro", "$3000", 2);
 
 const corpiños = [corpiñoLoto, corpiñoCatalina, corpiñoMagnolia];
-localStorage.setItem("carrito", JSON.stringify(corpiños));
-
 
 const agregaralcarritoloto = document.getElementById("agregaralcarritoloto");
 agregaralcarritoloto.addEventListener("click", () => {
+    localStorage.setItem("carraso", JSON.stringify(agregaralcarritoloto));
         agregarAlCarrito(corpiñoLoto);
     })
 
     const carrito = [];
 const agregarAlCarrito = (id) => {
+    localStorage.getItem("carraso")? JSON.parse(localStorage.getItem("carraso")) : [];
     const producto = corpiños.find(producto => Producto.id === id);
     const carritoDeProducto = carrito.find(producto => Producto.id === id);
     if(carritoDeProducto) {
@@ -60,7 +60,6 @@ const agregarAlCarrito = (id) => {
 const verCarrito = document.getElementById("offcanvascarro")
 verCarrito.addEventListener("click", actualizarCarrito);
 function actualizarCarrito() {
-    let corpiños = localStorage.getItem("carrito")? JSON.parse(localStorage.getItem("carrito")) : [];
     let aux="";
     carrito.forEach(corpiños => {
         aux += `
