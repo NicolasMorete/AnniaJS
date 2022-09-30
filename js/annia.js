@@ -37,15 +37,15 @@ const corpiñoMagnolia = new Producto (3, "Corpiño Magnolia", "negro", "$3000",
 
 const corpiños = [corpiñoLoto, corpiñoCatalina, corpiñoMagnolia];
 
+
 const agregaralcarritoloto = document.getElementById("agregaralcarritoloto");
 agregaralcarritoloto.addEventListener("click", () => {
-    localStorage.setItem("carraso", JSON.stringify(agregaralcarritoloto));
+    localStorage.setItem("carraso", JSON.stringify(corpiñoLoto));
         agregarAlCarrito(corpiñoLoto);
     })
 
     const carrito = [];
 const agregarAlCarrito = (id) => {
-    localStorage.getItem("carraso")? JSON.parse(localStorage.getItem("carraso")) : [];
     const producto = corpiños.find(producto => Producto.id === id);
     const carritoDeProducto = carrito.find(producto => Producto.id === id);
     if(carritoDeProducto) {
@@ -56,8 +56,10 @@ const agregarAlCarrito = (id) => {
     actualizarCarrito();
 }
 
+let obtenerLocalStorage = localStorage.getItem("carraso");
+console.log(obtenerLocalStorage);
 
-const verCarrito = document.getElementById("offcanvascarro")
+const verCarrito = document.getElementById("offcanvascarro");
 verCarrito.addEventListener("click", actualizarCarrito);
 function actualizarCarrito() {
     let aux="";
@@ -75,6 +77,8 @@ function actualizarCarrito() {
     })
     offcanvascarro.innerHTML = aux;
     calcularTotalCarrito();
+    let obtenerLocalStorageJSON = JSON.parse(localStorage.getItem("carraso"));
+    console.log(obtenerLocalStorageJSON);
 }
 
 
