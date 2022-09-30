@@ -5,8 +5,6 @@ buscar.addEventListener("input", ()=>{
 });
 // FORMULARIO DE CONTACTO
 let formulario = document.getElementById("formulario");
-localStorage.setItem("formulario", JSON.stringify(formulario));
-formulario = localStorage.getItem("formulario")? JSON.parse(localStorage.getItem(formulario)) : [nombre.value, apellido.value, correoe.value];
 if(formulario){
 formulario.addEventListener("submit",(e)=>{
     e.preventDefault();
@@ -14,6 +12,9 @@ formulario.addEventListener("submit",(e)=>{
     const apellido = document.getElementById("apellido");
     const correoe = document.getElementById("correoe");
     const consulta = document.getElementById("consulta");
+    let arrayFormulario = [nombre, apellido, correoe, consulta]
+    let localStorageFormulario = localStorage.setItem("formulario", JSON.stringify(arrayFormulario));
+    localStorageFormulario = localStorage.getItem("formulario")? JSON.parse(localStorage.getItem("formulario")) : [];
     console.log("Su nombre es: " + nombre.value);
     console.log("Su apellido es: " + apellido.value);
     console.log("Su Email es: " + correoe.value);
