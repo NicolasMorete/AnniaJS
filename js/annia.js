@@ -21,6 +21,17 @@ formulario.addEventListener("submit",(e)=>{
     console.log("Formulario enviado, en breve nos contactaremos contigo.");
     formulario.reset();
 })};
+let btnenviar = document.getElementById("btnenviar");
+if(btnenviar){
+    btnenviar.addEventListener("click",() => {
+    swal({
+        title: "Gracias!",
+        text: "Formulario enviado, en breve nos contactaremos contigo",
+        icon: "success",
+        button: "Aceptar",
+      });
+});}
+
 
 class Producto {
     constructor (id, nombre,color, precio, cantidad){
@@ -43,6 +54,17 @@ const agregaralcarritoloto = document.getElementById("agregaralcarritoloto");
 agregaralcarritoloto.addEventListener("click", () => {
     localStorage.setItem("carraso", JSON.stringify(corpiñoLoto));
         agregarAlCarrito(corpiñoLoto);
+    Toastify({
+        text: "Agregado al carrito con éxito",
+        duration: 3000,
+        gravity: "bottom", 
+        style: {
+            background: "#FAC5F5",
+            color: "black",
+        },
+        destination:"#offcanvasRight",
+        close: true,
+        }).showToast();
     })
 
     const carrito = [];
@@ -71,10 +93,10 @@ function actualizarCarrito() {
             <div class="">
                 <h3 class="card-title"> ${corpiñoLoto.nombre} </h3>
                 <p class="card-text"> ${corpiñoLoto.precio} </p>
-                <button onClick = "eliminarDelCarrito(${Producto.id})" class="btn btn-primary boton"> Eliminar del Carrito </button>
+                <button onClick = "eliminarDelCarrito(${Producto.id})" class="btn btn-primary boton" id="btneliminardelcarro"> Eliminar del Carrito </button>
             </div>
         </div>
-        `;   
+        `;
     })
     offcanvascarro.innerHTML = aux;
     calcularTotalCarrito();
