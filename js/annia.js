@@ -43,9 +43,9 @@ class Producto {
     }
 }
 // CREANDO PRODUCTOS
-const corpiñoLoto = new Producto (1, "Corpiño Loto", "negro", "$2500", 2);
-const corpiñoCatalina = new Producto (2, "Corpiño Catalina", "negro", "$2400", 2);
-const corpiñoMagnolia = new Producto (3, "Corpiño Magnolia", "negro", "$3000", 2);
+const corpiñoLoto = new Producto (1, "Corpiño Loto", "negro", 2500, 2);
+const corpiñoCatalina = new Producto (2, "Corpiño Catalina", "negro", 2400, 2);
+const corpiñoMagnolia = new Producto (3, "Corpiño Magnolia", "negro", 3000, 2);
 
 const corpiños = [corpiñoLoto, corpiñoCatalina, corpiñoMagnolia];
 
@@ -72,7 +72,7 @@ const agregarAlCarrito = (id) => {
     const producto = corpiños.find(producto => Producto.id === id);
     const carritoDeProducto = carrito.find(producto => Producto.id === id);
     if(carritoDeProducto) {
-        carritoDeProducto.cantidad ++;
+        carritoDeProducto.cantidad++;
     }else {
         carrito.push(Producto);
     }
