@@ -24,6 +24,17 @@ function agregarAlCarritoClick(e) {
 function agregarItemAlCarrito(nombreProducto, precioProducto, imagenProducto) {
   const nombreDeProducto = contenedorCarritoProducto.getElementsByClassName('productoEnCarritoNombre'
   );
+  Toastify({
+    text: "Agregado al carrito con éxito",
+    duration: 3000,
+    gravity: "bottom", 
+    style: {
+        background: "#FAC5F5",
+        color: "black",
+    },
+    destination:"#offcanvasRight",
+    close: true,
+    }).showToast();
   for (let i = 0; i < nombreDeProducto.length; i++) {
     if (nombreDeProducto[i].innerHTML === nombreProducto) {
       let cantidadProducto = nombreDeProducto[i].parentElement.parentElement.parentElement.querySelector('.cantidadProductoEnCarrito'
@@ -60,6 +71,7 @@ function agregarItemAlCarrito(nombreProducto, precioProducto, imagenProducto) {
     </div>`;
   carritoDeComprasRow.innerHTML = carritoDeComprasContenido;
   contenedorCarritoProducto.append(carritoDeComprasRow);
+  localStorage.setItem('carritoGuardado', carritoDeComprasContenido);
 
   carritoDeComprasRow
     .querySelector('.botonBorrar')
@@ -68,10 +80,15 @@ function agregarItemAlCarrito(nombreProducto, precioProducto, imagenProducto) {
   carritoDeComprasRow
     .querySelector('.cantidadProductoEnCarrito')
     .addEventListener('change', cambiarCantidad);
-
-  actualizarTotalCarrito();
+    window.onload = function (){
+      const guardarEnStorage = localStorage.getItem('carritoGuardado');
+       if (guardarEnStorage){
+        productoEnCarroDeCompras === guardarEnStorage;
+        agregarItemAlCarrito();
+    }
+    actualizarTotalCarrito();
+  }
 }
-
 function actualizarTotalCarrito() {
   let total = 0;
   const totalCarritoDeCompras = document.querySelector('.totalCarritoDeCompras');
