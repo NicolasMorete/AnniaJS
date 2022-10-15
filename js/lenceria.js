@@ -10,8 +10,8 @@ const contenedorCarritoProducto = document.querySelector(
   '.contenedorCarritoProducto'
 );
 
-function agregarAlCarritoClick(event) {
-  const button = event.target;
+function agregarAlCarritoClick(e) {
+  const button = e.target;
   const item = button.closest('.item');
 
   const nombreProducto = item.querySelector('.producto-nombre').textContent;
@@ -22,22 +22,17 @@ function agregarAlCarritoClick(event) {
 }
 
 function agregarItemAlCarrito(nombreProducto, precioProducto, imagenProducto) {
-  const nombreDeProducto = contenedorCarritoProducto.getElementsByClassName(
-    'productoEnCarritoNombre'
+  const nombreDeProducto = contenedorCarritoProducto.getElementsByClassName('productoEnCarritoNombre'
   );
   for (let i = 0; i < nombreDeProducto.length; i++) {
-    if (nombreDeProducto[i].innerText === nombreProducto) {
-      let cantidadProducto = nombreDeProducto[
-        i
-      ].parentElement.parentElement.parentElement.querySelector(
-        '.cantidadProductoEnCarrito'
+    if (nombreDeProducto[i].innerHTML === nombreProducto) {
+      let cantidadProducto = nombreDeProducto[i].parentElement.parentElement.parentElement.querySelector('.cantidadProductoEnCarrito'
       );
       cantidadProducto.value++;
-      $('.toast').toast('show');
       actualizarTotalCarrito();
       return;
     }
-  }
+  };
 
   const carritoDeComprasRow = document.createElement('div');
   const carritoDeComprasContenido = `
@@ -51,7 +46,7 @@ function agregarItemAlCarrito(nombreProducto, precioProducto, imagenProducto) {
         </div>
         <div class="col-2">
             <div class="shopping-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                <p class="producto-precio mb-0 precioProductoUnitarioEnCarrito">${precioProducto}</p>
+                <p class="producto-precio mb-0 precioProductoUnitarioEnCarrito"> ${precioProducto} </p>
             </div>
         </div>
         <div class="col-4">
@@ -84,14 +79,12 @@ function actualizarTotalCarrito() {
   const productosEnCarritoDeCompras = document.querySelectorAll('.productoEnCarroDeCompras');
 
   productosEnCarritoDeCompras.forEach((productoEnCarroDeCompras) => {
-    const precioDelProductoEnCarrito = productoEnCarroDeCompras.querySelector(
-      '.precioProductoUnitarioEnCarrito'
+    const precioDelProductoEnCarrito = productoEnCarroDeCompras.querySelector('.precioProductoUnitarioEnCarrito'
     );
     const precioProductoUnitarioEnCarrito = Number(
-      precioDelProductoEnCarrito.textContent.replace('€', '')
+      precioDelProductoEnCarrito.textContent.replace('$', '')
     );
-    const cantidadProductoEnCarritoMismo = productoEnCarroDeCompras.querySelector(
-      '.cantidadProductoEnCarrito'
+    const cantidadProductoEnCarritoMismo = productoEnCarroDeCompras.querySelector('.cantidadProductoEnCarrito'
     );
     const cantidadProductoEnCarrito = Number(
       cantidadProductoEnCarritoMismo.value
@@ -101,19 +94,29 @@ function actualizarTotalCarrito() {
   totalCarritoDeCompras.innerHTML = ` ${total.toFixed(2)}$`;
 }
 
-function borrarProductoDelCarrito(event) {
-  const botonClick = event.target;
+function borrarProductoDelCarrito(e) {
+  const botonClick = e.target;
   botonClick.closest('.productoEnCarroDeCompras').remove();
   actualizarTotalCarrito();
 }
 
-function cambiarCantidad(event) {
-  const input = event.target;
+function cambiarCantidad(e) {
+  const input = e.target;
   input.value <= 0 ? (input.value = 1) : null;
   actualizarTotalCarrito();
 }
 
 function botonComprarClick() {
-  contenedorCarritoProducto.innerHTML = '';
+  contenedorCarritoProducto.addEventListener(),(e)=> {
+    e.preventDefault();
+  };
   actualizarTotalCarrito();
 }
+
+let finalizar = document.querySelector(".volverdelacompra");
+finalizar.addEventListener("click", finalizarcarrito)
+function finalizarcarrito() {
+    contenedorCarritoProducto.innerHTML = '';
+    actualizarTotalCarrito();
+}
+

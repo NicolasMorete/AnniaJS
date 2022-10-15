@@ -37,10 +37,11 @@
     .letrasnegras {   
         color: $color-negro;
         text-decoration-color: $color-negro;
+        text-decoration: none;
     }
 }
 .offcanvas.show{
-    width: 400px;
+    width: 500px;
     .card{
         width: 100%;
         align-items: center;
@@ -48,5 +49,8 @@
             width: 150px;
             height: 170px;
         }
+    }
+    .shopping-cart-quantity-input{
+        width: 100px;
     }
 }

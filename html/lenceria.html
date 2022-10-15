@@ -106,19 +106,19 @@
                           <img class="producto-imagen imglenc" src="../img/nuevasesion/braletteloto2.jpg">
 
                           <div class="item-details">
-                              <h4 class="producto-precio">2500</h4>
+                              <h4 class="producto-precio">2500$</h4>
                               <button class="item-button btn btn-primary agregarAlCarrito">AÑADIR AL CARRITO</button>
                           </div>
                       </div>
                   </div>
                   <div class="col-12 col-md-6">
                       <div class="item shadow mb-4">
-                          <h3 class="producto-nombre">Corpiño Azalea</h3>
+                          <h3 class="producto-nombre">Conjunto Azalea</h3>
 
                           <img class="producto-imagen imglenc" src="../img/nuevasesion/azaleanegro.jpg">
 
                           <div class="item-details">
-                              <h4 class="producto-precio">2600</h4>
+                              <h4 class="producto-precio">4300$</h4>
                               <button class="item-button btn btn-primary agregarAlCarrito">AÑADIR AL CARRITO</button>
                           </div>
                       </div>
@@ -133,7 +133,7 @@
                           <img class="producto-imagen imglenc" src="../img/nuevasesion/morocha.jpg">
 
                           <div class="item-details">
-                              <h4 class="producto-precio">5500</h4>
+                              <h4 class="producto-precio">5500$</h4>
                               <button class="item-button btn btn-primary agregarAlCarrito">AÑADIR AL CARRITO</button>
                           </div>
                       </div>
@@ -145,7 +145,7 @@
                           <img class="producto-imagen imglenc" src="../img/nuevasesion/colorada.jpg">
 
                           <div class="item-details">
-                              <h4 class="producto-precio">4400</h4>
+                              <h4 class="producto-precio">4400$</h4>
                               <button class="item-button btn btn-primary agregarAlCarrito">AÑADIR AL CARRITO</button>
                           </div>
                       </div>
@@ -158,7 +158,7 @@
 
                           <img class="imglenc producto-imagen" src="../img/nuevasesion/tangaazalea.jpg">
                           <div class="item-details">
-                              <h4 class="producto-precio">1900</h4>
+                              <h4 class="producto-precio">1900$</h4>
                               <button class="item-button btn btn-primary agregarAlCarrito">AÑADIR AL CARRITO</button>
                           </div>
                       </div>
@@ -169,7 +169,7 @@
 
                           <img class="imglenc producto-imagen" src="../img/nuevasesion/lotoblanco.jpg">
                           <div class="item-details">
-                              <h4 class="producto-precio">5100</h4>
+                              <h4 class="producto-precio">5100$</h4>
                               <button class="item-button btn btn-primary agregarAlCarrito">AÑADIR AL CARRITO</button>
                           </div>
                       </div>
@@ -178,27 +178,47 @@
           </div>
       </div>
   </section>
-  
 
-        <!-- <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="comprarModalLabel">Gracias por su compra</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Pronto recibirá su pedido</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
+<!-- MODAL PARA FINALIZAR COMPRA -->
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel">Comprar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Ingrese sus datos de tarjeta débito/crédito: <hr>
+        <label for="exampleInputEmail1" class="form-label">NÚMERO</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <label for="exampleInputEmail1" class="form-label">VENCIMIENTO</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <label for="exampleInputPassword1" class="form-label">CÓDIGO</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">FINALIZAR COMPRA</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel2">Gracias por tu compra</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Tu compra ya está lista para retirar por nuestro local! en:
+        Aguirre 1167, Villa Crespo.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary volverdelacompra" data-bs-target="" data-bs-toggle="modal" data-bs-dismiss="modal">Volver al navegador</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- DESPLEGABLE OFF CANVAS PARA INICIAR SESIÓN -->
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
@@ -255,12 +275,8 @@
                   </div>
               </div>
           </div>
-          <!-- ? START SHOPPING CART ITEMS -->
           <div class="shopping-cart-items contenedorCarritoProducto">
           </div>
-          <!-- ? END SHOPPING CART ITEMS -->
-  
-          <!-- START TOTAL -->
           <div class="row">
               <div class="col-12">
                   <div class="shopping-cart-total d-flex align-items-center">
@@ -268,19 +284,9 @@
                       <p class="ml-4 mb-0 totalCarritoDeCompras">0$</p>
                       <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
                           data-delay="2000">
-                          <div class="toast-header">
-                              <span>✅</span>
-                              <strong class="mr-auto ml-1 text-secondary">Producto en el carrito</strong>
-                              <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                              </button>
-                          </div>
-                          <div class="toast-body text-white">
-                              Se aumentó correctamente la cantidad
-                          </div>
                       </div>
-                      <button class="btn btn-success ml-auto comprarBoton" type="button" data-toggle="offcanvas"
-                          data-target="#offcanvasExample">Comprar</button>
+                      <button id="exampleModalToggleLabel" class="btn btn-success ml-auto comprarBoton" type="button" data-toggle="offcanvas"
+                          data-target="#offcanvasExample"><a class="letrasnegras text-center" data-bs-toggle="modal" href="#exampleModalToggle">Comprar</a></button>
                   </div>
               </div>
           </div>
@@ -327,7 +333,7 @@
   <!-- Sweet Alert -->
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!-- Mi JS -->
-  <script src="../js/tercero.js"></script>
+  <script src="../js/lenceria.js"></script>
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
