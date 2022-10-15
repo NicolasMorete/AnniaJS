@@ -367,6 +367,16 @@ main {
 .articulo {
   margin-bottom: 25px; }
 
+.producto-imagen {
+  width: 500px;
+  height: 725px; }
+
+.shopping-cart-image {
+  width: 150px; }
+
+.row {
+  --bs-gutter-x: 0.5rem; }
+
 .maincontacto {
   display: flex;
   flex-direction: column;
