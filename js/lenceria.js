@@ -80,14 +80,14 @@ function agregarItemAlCarrito(nombreProducto, precioProducto, imagenProducto) {
   carritoDeComprasRow
     .querySelector('.cantidadProductoEnCarrito')
     .addEventListener('change', cambiarCantidad);
-    window.onload = function (){
-      const guardarEnStorage = localStorage.getItem('carritoGuardado');
-       if (guardarEnStorage){
-        productoEnCarroDeCompras === guardarEnStorage;
-        agregarItemAlCarrito();
-    }
-    actualizarTotalCarrito();
-  }
+  //   window.onload = function (){
+  //     const guardarEnStorage = localStorage.getItem('carritoGuardado');
+  //      if (guardarEnStorage){
+  //       productoEnCarroDeCompras === guardarEnStorage;
+  //       agregarItemAlCarrito();
+  //   }
+  //   actualizarTotalCarrito();
+  // }
 }
 function actualizarTotalCarrito() {
   let total = 0;
@@ -106,9 +106,9 @@ function actualizarTotalCarrito() {
     const cantidadProductoEnCarrito = Number(
       cantidadProductoEnCarritoMismo.value
     );
-    total = total + precioProductoUnitarioEnCarrito * cantidadProductoEnCarrito;
+    total = total * 0 + precioProductoUnitarioEnCarrito * cantidadProductoEnCarrito;
   });
-  totalCarritoDeCompras.innerHTML = ` ${total.toFixed(2)}$`;
+  totalCarritoDeCompras.innerHTML = ` ${total.toFixed(0)}$`;
 }
 
 function borrarProductoDelCarrito(e) {
