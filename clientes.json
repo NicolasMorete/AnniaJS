@@ -1,0 +1,34 @@
+[
+    {
+        "email":"abc@abc.com",
+        "contraseña":"1234"
+    },
+    {
+        "email":"def@abc.com",
+        "contraseña":"1111"
+    },
+    {
+        "email":"ghi@abc.com",
+        "contraseña":"2222"
+    },
+    {
+        "email":"jkl@abc.com",
+        "contraseña":"3333"
+    },
+    {
+        "email":"mnl@abc.com",
+        "contraseña":"4444"
+    },
+    {
+        "email":"ijk@abc.com",
+        "contraseña":"5555"
+    },
+    {
+        "email":"xyz@abc.com",
+        "contraseña":"6666"
+    },
+    {
+        "email":"samu@tocaimaza.com",
+        "contraseña":"1234"
+    }
+]
