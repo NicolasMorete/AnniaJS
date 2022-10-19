@@ -89,7 +89,7 @@
        <div class="ideallink">
         <p> <a href="../productos/curvadetalles.html"> Conocé tu talle ideal</a></p></div>
      </div>
-     <section class="store">
+     <section class="tienda">
       <div class="container">
           <div class="items">
               <div class="row">
@@ -182,16 +182,18 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Ingrese sus datos de tarjeta débito/crédito: <hr>
-        <label for="exampleInputEmail1" class="form-label">NÚMERO</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        <label for="exampleInputEmail1" class="form-label">VENCIMIENTO</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        <label for="exampleInputPassword1" class="form-label">CÓDIGO</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">FINALIZAR COMPRA</button>
+        <form>
+          Ingrese sus datos de tarjeta débito/crédito: <hr>
+          <label for="exampleInputEmail1" class="form-label">NÚMERO</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Número de tarjeta" required>
+          <label for="exampleInputEmail1" class="form-label">VENCIMIENTO</label>
+          <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Vencimiento de la tarjeta" required>
+          <label for="exampleInputPassword1" class="form-label">CÓDIGO</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Código de seguridad" required>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal" type="submit">FINALIZAR COMPRA</button>
+        </form>
       </div>
     </div>
   </div>
@@ -237,14 +239,14 @@
             <label class="form-check-label" for="exampleCheck1">Recordar datos de inicio de sesión</label>
           </div>
           <button id="btniniciodesesion" type="submit" class="btn btn-primary">Iniciar sesión</button>
+        </form>
           <div class="offcanvasolv"> <a class="letrasnegras" href="#"><p class="letrasnegras">Olvidé mi contraseña</p></a></div>
           <div> <a class="letrasnegras" href="#"><p class="letrasnegras">Aún no sos usuario? Únete al #AnniaTeam</p></a></div>
-        </form>
       </div>
     </div>
   </div>
   <!-- OFF CANVAS PARA CARRITO COMPRAS -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas offcanvas-end offcanvas-carrito" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
@@ -275,7 +277,7 @@
               <div class="col-12">
                   <div class="shopping-cart-total d-flex align-items-center">
                       <p class="mb-0">Total  </p>
-                      <p class="ml-4 mb-0 totalCarritoDeCompras">0$</p>
+                      <p class="ml-4 mb-0 totalCarritoDeCompras">  0$</p>
                       <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
                           data-delay="2000">
                       </div>

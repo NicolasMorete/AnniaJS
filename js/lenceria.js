@@ -72,7 +72,9 @@ function agregarItemAlCarrito(nombreProducto, precioProducto, imagenProducto) {
   carritoDeComprasRow.innerHTML = carritoDeComprasContenido;
   contenedorCarritoProducto.append(carritoDeComprasRow);
   localStorage.setItem('carritoGuardado', carritoDeComprasContenido);
-
+  const ObtLcSt = localStorage.getItem('carritoGuardado');
+  console.log(ObtLcSt);
+  actualizarTotalCarrito();
   carritoDeComprasRow
     .querySelector('.botonBorrar')
     .addEventListener('click', borrarProductoDelCarrito);
@@ -80,14 +82,8 @@ function agregarItemAlCarrito(nombreProducto, precioProducto, imagenProducto) {
   carritoDeComprasRow
     .querySelector('.cantidadProductoEnCarrito')
     .addEventListener('change', cambiarCantidad);
-  //   window.onload = function (){
-  //     const guardarEnStorage = localStorage.getItem('carritoGuardado');
-  //      if (guardarEnStorage){
-  //       productoEnCarroDeCompras === guardarEnStorage;
-  //       agregarItemAlCarrito();
-  //   }
-  //   actualizarTotalCarrito();
-  // }
+    actualizarTotalCarrito();
+
 }
 function actualizarTotalCarrito() {
   let total = 0;
@@ -106,7 +102,7 @@ function actualizarTotalCarrito() {
     const cantidadProductoEnCarrito = Number(
       cantidadProductoEnCarritoMismo.value
     );
-    total = total * 0 + precioProductoUnitarioEnCarrito * cantidadProductoEnCarrito;
+    total = total + precioProductoUnitarioEnCarrito * cantidadProductoEnCarrito;
   });
   totalCarritoDeCompras.innerHTML = ` ${total.toFixed(0)}$`;
 }
@@ -142,36 +138,29 @@ const clientes = "../clientes.json";
 fetch(clientes)
   .then(rta=>rta.json())
   .then(datos=>{
-    console.log(datos);
-    iniciarSesion(datos);
+    datos.forEach(clientes =>{
+      btniniciodesesion.addEventListener("submit", ()=>{
+        if (email === clientes.email && contrasena === clientes.contrasena ){
+          JSON.stringify(localStorage.setItem("usuarioIniciado", email, contrasena )) ;
+              swal({
+               title: "Sesión iniciada",
+               text: "Puedes seguir navegando",
+               icon: "success",
+               button: "Aceptar",
+              });
+        }else{
+          swal({
+              text: "Usuario incorrecto",
+              icon: "warning",
+              button: "Aceptar",
+            });} return;
+          })});
   })
   .catch(error=> console.log(error));
 
-let email, contrasena;
-email= document.querySelector(".emailsesion").value;
-contrasena=document.querySelector(".contraseñasesion").value;
-localStorage.setItem("usuarioIniciado", (email ,contrasena));
-function iniciarSesion (datos){
-  datos.forEach(email, contrasena=>{
-    email=datos.email;
-    contrasena=datos.contrasena;
-  })
-  if (email == datos.email && contrasena == datos.contrasena){
-    swal({
-      title: "Sesión iniciada",
-      text: "Puedes seguir navegando",
-      icon: "success",
-      button: "Aceptar",
-    });
-  }else{
-    swal({
-      text: "Usuario incorrecto",
-      icon: "warning",
-      button: "Aceptar",
-    });
-  }
-  let obtLcSt = localStorage.getItem("usuarioIniciado");
-   console.log(obtLcSt);
-}
+const btniniciodesesion = document.getElementById("btniniciodesesion"); 
 
+let email = document.querySelector(".emailsesion").value;
+let contrasena = document.querySelector(".contraseñasesion").value;
 
+let ObtLcSt = localStorage.getItem("usuarioIniciado");

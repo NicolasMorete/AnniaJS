@@ -1,3 +1,125 @@
+@media (min-width: 577px) and (max-width: 991px) {
+  body .mainflex .producto-imagen {
+    width: 240px;
+    height: 400px; }
+  body .menues {
+    width: 25%; }
+    body .menues .menucolores .colores p {
+      font-size: 10px; }
+    body .menues .menucolores .variantecolores {
+      font-size: 15px; }
+    body .menues .menutalles .talles p {
+      font-size: 10px; }
+    body .menues .variantetalles {
+      font-size: 15px; }
+  body .imageneslenceria {
+    justify-content: center;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 100%; }
+    body .imageneslenceria_grid {
+      width: 100%; }
+      body .imageneslenceria_grid:nth-of-type(1) {
+        grid-column: 2/7; }
+      body .imageneslenceria_grid:nth-of-type(2) {
+        grid-column: 7/12; }
+      body .imageneslenceria_grid:nth-of-type(3) {
+        grid-column: 2/7;
+        grid-row: 2; }
+      body .imageneslenceria_grid:nth-of-type(4) {
+        grid-column: 7/12;
+        grid-row: 2; }
+      body .imageneslenceria_grid:nth-of-type(5) {
+        grid-column: 2/7;
+        grid-row: 3; }
+      body .imageneslenceria_grid:nth-of-type(6) {
+        grid-column: 7/12;
+        grid-row: 3; }
+  body .articulo_flex {
+    flex-wrap: wrap; }
+    body .articulo_flex_hijo3 {
+      align-items: center; }
+  body .maincontacto .contacto .gridcontacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: none;
+    text-align: none;
+    width: 100%; }
+  .gridfooter .gridhijo3 .redes {
+    flex-direction: column;
+    gap: 10px; } }
+
+@media (min-width: 320px) and (max-width: 576px) {
+  body header {
+    flex-direction: column; }
+  body .mainflex {
+    justify-content: flex-end;
+    text-align: start;
+    width: 100%; }
+    body .mainflex .producto-imagen {
+      width: 200px;
+      height: 350px; }
+    body .mainflex .menues {
+      align-items: flex-start;
+      width: 33%; }
+      body .mainflex .menues .menucolores {
+        padding-left: 10px; }
+        body .mainflex .menues .menucolores .colores {
+          font-size: 10px; }
+        body .mainflex .menues .menucolores .variantecolores {
+          font-size: 15px; }
+      body .mainflex .menues .menutalles {
+        padding-left: 10px; }
+        body .mainflex .menues .menutalles .talles {
+          font-size: 10px; }
+        body .mainflex .menues .menutalles .variantetalles {
+          font-size: 15px; }
+      body .mainflex .menues .ideallink {
+        width: 70px;
+        font-size: 15px; }
+    body .mainflex .imageneslenceria {
+      display: flex;
+      flex-direction: column;
+      justify-content: none;
+      text-align: none; }
+      body .mainflex .imageneslenceria .imglenc {
+        width: 100%;
+        padding-right: 10px;
+        gap: 15px; }
+  body .articulo_flex {
+    flex-wrap: wrap;
+    gap: 5px; }
+    body .articulo_flex_hijo3 {
+      align-items: center; }
+  body .maincontacto .contacto .gridcontacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: none;
+    text-align: none;
+    width: 100%; }
+  body .offcanvas-header .offcanvas-title {
+    width: 100%; }
+  body .offcanvas-start.show {
+    width: 250px; }
+  .gridfooter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: none;
+    text-align: center;
+    gap: 25px; }
+    .gridfooter .gridhijo1 .logofooter {
+      width: 310px; }
+    .gridfooter .gridhijo2 .iframemaps {
+      width: 175px;
+      height: 250px; }
+    .gridfooter .gridhijo3 .redes {
+      display: flex;
+      flex-direction: column;
+      justify-content: none;
+      text-align: none;
+      gap: 2rem; } }
+
 * {
   margin: 0;
   padding: 0; }
@@ -130,6 +252,9 @@ header {
       height: 170px; }
   .offcanvas.show .shopping-cart-quantity-input {
     width: 100px; }
+
+.offcanvas-carrito {
+  overflow-y: scroll; }
 
 .pagination .page-link {
   color: #000;
@@ -374,8 +499,8 @@ main {
   margin-bottom: 25px; }
 
 .producto-imagen {
-  width: 500px;
-  height: 725px; }
+  width: 370px;
+  height: 620px; }
 
 .shopping-cart-image {
   width: 150px; }
@@ -493,39 +618,40 @@ main {
       text-decoration: none; }
 
 @media (min-width: 577px) and (max-width: 991px) {
-  body .mainflex .menues {
+  body .mainflex .producto-imagen {
+    width: 240px;
+    height: 400px; }
+  body .menues {
     width: 25%; }
-    body .mainflex .menues .menucolores .colores p {
+    body .menues .menucolores .colores p {
       font-size: 10px; }
-    body .mainflex .menues .menucolores .variantecolores {
+    body .menues .menucolores .variantecolores {
       font-size: 15px; }
-    body .mainflex .menues .menutalles .talles p {
+    body .menues .menutalles .talles p {
       font-size: 10px; }
-    body .mainflex .menues .variantetalles {
+    body .menues .variantetalles {
       font-size: 15px; }
-  body .mainflex .imageneslenceria {
+  body .imageneslenceria {
     justify-content: center;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(3, 1fr);
     width: 100%; }
-    body .mainflex .imageneslenceria .imglenc {
+    body .imageneslenceria_grid {
       width: 100%; }
-    body .mainflex .imageneslenceria_grid {
-      width: 100%; }
-      body .mainflex .imageneslenceria_grid:nth-of-type(1) {
+      body .imageneslenceria_grid:nth-of-type(1) {
         grid-column: 2/7; }
-      body .mainflex .imageneslenceria_grid:nth-of-type(2) {
+      body .imageneslenceria_grid:nth-of-type(2) {
         grid-column: 7/12; }
-      body .mainflex .imageneslenceria_grid:nth-of-type(3) {
+      body .imageneslenceria_grid:nth-of-type(3) {
         grid-column: 2/7;
         grid-row: 2; }
-      body .mainflex .imageneslenceria_grid:nth-of-type(4) {
+      body .imageneslenceria_grid:nth-of-type(4) {
         grid-column: 7/12;
         grid-row: 2; }
-      body .mainflex .imageneslenceria_grid:nth-of-type(5) {
+      body .imageneslenceria_grid:nth-of-type(5) {
         grid-column: 2/7;
         grid-row: 3; }
-      body .mainflex .imageneslenceria_grid:nth-of-type(6) {
+      body .imageneslenceria_grid:nth-of-type(6) {
         grid-column: 7/12;
         grid-row: 3; }
   body .articulo_flex {
@@ -549,6 +675,9 @@ main {
     justify-content: flex-end;
     text-align: start;
     width: 100%; }
+    body .mainflex .producto-imagen {
+      width: 200px;
+      height: 350px; }
     body .mainflex .menues {
       align-items: flex-start;
       width: 33%; }

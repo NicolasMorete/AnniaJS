@@ -94,8 +94,51 @@
     <p>Nosotros (Annia) somos un emprendimiento que surgió en plena pandemia, dedicado al diseño y comercialización de pijamas, lencería y corsetería. La mayoría de todos los diseños están pensados para la hora de dormir. Buscamos —a través de la elección de sedas suaves y una tabla de talles reales— promover una relación sana con nuestros cuerpos y convertir la hora de dormir en un ritual.
     </p>
   
-<!-- DESPLEGABLE OFF CANVAS PARA INICIAR SESIÓN -->
- <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+<!-- MODAL PARA FINALIZAR COMPRA -->
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel">Comprar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          Ingrese sus datos de tarjeta débito/crédito: <hr>
+          <label for="exampleInputEmail1" class="form-label">NÚMERO</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Número de tarjeta" required>
+          <label for="exampleInputEmail1" class="form-label">VENCIMIENTO</label>
+          <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Vencimiento de la tarjeta" required>
+          <label for="exampleInputPassword1" class="form-label">CÓDIGO</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Código de seguridad" required>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal" type="submit">FINALIZAR COMPRA</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel2">Gracias por tu compra</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Tu compra ya está lista para retirar por nuestro local! en:
+        Aguirre 1167, Villa Crespo.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary volverdelacompra" data-bs-target="" data-bs-toggle="modal" data-bs-dismiss="modal">Volver al navegador</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- DESPLEGABLE OFF CANVAS PARA INICIAR SESIÓN -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
       <a href="../html/inicio.html"><img class="offcanvas-title" id="offcanvasExampleLabel" src="../img/logonegro.png" alt="logoannia"></img></a>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -103,26 +146,70 @@
     <div class="offcanvas-body">
       <div>
         <form>
-          <div class="mb-3">
+          <div id="nombreSesion" class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input  type="email" class="emailsesion form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-text">No le compartiremos tu email a nadie, nunca</div>
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <input type="password" class="contraseñasesion form-control" id="exampleInputPassword1">
           </div>
           <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Recordar datos de inicio de sesión</label>
           </div>
-          <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+          <button id="btniniciodesesion" type="submit" class="btn btn-primary">Iniciar sesión</button>
           <div class="offcanvasolv"> <a class="letrasnegras" href="#"><p class="letrasnegras">Olvidé mi contraseña</p></a></div>
           <div> <a class="letrasnegras" href="#"><p class="letrasnegras">Aún no sos usuario? Únete al #AnniaTeam</p></a></div>
         </form>
       </div>
     </div>
   </div>
+  <!-- OFF CANVAS PARA CARRITO COMPRAS -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <section class="shopping-cart">
+      <div class="container">
+          <h1 class="text-center">Tu carrito de compras</h1>
+          
+          <div class="row">
+              <div class="col-6">
+                  <div class="shopping-cart-header">
+                      <h6>Producto</h6>
+                  </div>
+              </div>
+              <div class="col-2">
+                  <div class="shopping-cart-header">
+                      <h6 class="text-truncate">Precio</h6>
+                  </div>
+              </div>
+              <div class="col-4">
+                  <div class="shopping-cart-header">
+                      <h6>Cantidad</h6>
+                  </div>
+              </div>
+          </div>
+          <div class="shopping-cart-items contenedorCarritoProducto">
+          </div>
+          <div class="row">
+              <div class="col-12">
+                  <div class="shopping-cart-total d-flex align-items-center">
+                      <p class="mb-0">Total  </p>
+                      <p class="ml-4 mb-0 totalCarritoDeCompras">0$</p>
+                      <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
+                          data-delay="2000">
+                      </div>
+                      <button id="exampleModalToggleLabel" class="btn btn-success ml-auto comprarBoton" type="button" data-toggle="offcanvas"
+                          data-target="#offcanvasExample"><a class="letrasnegras text-center" data-bs-toggle="modal" href="#exampleModalToggle">Comprar</a></button>
+                  </div>
+              </div>
+          </div>
+
+  </div>
+</div>
   </main>
   <nav> 
     <div> <a href="#arribanosotros"><button type="button" class="btn btn-outline-warning ">Ir Arriba</button></a></div>
