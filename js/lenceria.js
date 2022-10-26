@@ -71,9 +71,6 @@ function agregarItemAlCarrito(nombreProducto, precioProducto, imagenProducto) {
     </div>`;
   carritoDeComprasRow.innerHTML = carritoDeComprasContenido;
   contenedorCarritoProducto.append(carritoDeComprasRow);
-  localStorage.setItem('carritoGuardado', carritoDeComprasContenido);
-  const ObtLcSt = localStorage.getItem('carritoGuardado');
-  console.log(ObtLcSt);
   actualizarTotalCarrito();
   carritoDeComprasRow
     .querySelector('.botonBorrar')
@@ -141,7 +138,6 @@ fetch(clientes)
     datos.forEach(clientes =>{
       btniniciodesesion.addEventListener("submit", ()=>{
         if (email === clientes.email && contrasena === clientes.contrasena ){
-          JSON.stringify(localStorage.setItem("usuarioIniciado", email, contrasena )) ;
               swal({
                title: "Sesión iniciada",
                text: "Puedes seguir navegando",
@@ -163,4 +159,3 @@ const btniniciodesesion = document.getElementById("btniniciodesesion");
 let email = document.querySelector(".emailsesion").value;
 let contrasena = document.querySelector(".contraseñasesion").value;
 
-let ObtLcSt = localStorage.getItem("usuarioIniciado");
