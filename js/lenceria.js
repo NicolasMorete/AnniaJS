@@ -1,15 +1,15 @@
+// BOTÓN QUE AGREGA EL PRODUCTO AL CARRITO
 const botonAgregarAlCarritoCompras = document.querySelectorAll('.agregarAlCarrito');
 botonAgregarAlCarritoCompras.forEach((botonAgregarAlCarrito) => {
   botonAgregarAlCarrito.addEventListener('click', agregarAlCarritoClick);
 });
-
+// BOTÓN PARA FINALIZAR COMPRA
 const comprarBoton = document.querySelector('.comprarBoton');
 comprarBoton.addEventListener('click', botonComprarClick);
 
-const contenedorCarritoProducto = document.querySelector(
-  '.contenedorCarritoProducto'
-);
+const contenedorCarritoProducto = document.querySelector('.contenedorCarritoProducto');
 
+// FUNCIÓN QUE AGREGA EL PRODUCTO
 function agregarAlCarritoClick(e) {
   const button = e.target;
   const item = button.closest('.item');
@@ -22,8 +22,7 @@ function agregarAlCarritoClick(e) {
 }
 
 function agregarItemAlCarrito(nombreProducto, precioProducto, imagenProducto) {
-  const nombreDeProducto = contenedorCarritoProducto.getElementsByClassName('productoEnCarritoNombre'
-  );
+  const nombreDeProducto = contenedorCarritoProducto.getElementsByClassName('productoEnCarritoNombre');
   Toastify({
     text: "Agregado al carrito con éxito",
     duration: 3000,
@@ -45,6 +44,7 @@ function agregarItemAlCarrito(nombreProducto, precioProducto, imagenProducto) {
     }
   };
 
+  // CONTENEDOR QUE CONTIENE EL PRODUCTO EN CARRITO
   const carritoDeComprasRow = document.createElement('div');
   const carritoDeComprasContenido = `
   <div class="row productoEnCarroDeCompras">
@@ -82,6 +82,7 @@ function agregarItemAlCarrito(nombreProducto, precioProducto, imagenProducto) {
     actualizarTotalCarrito();
 
 }
+// FUNCIÓN QUE ACTUALIZA EL CARRITO 
 function actualizarTotalCarrito() {
   let total = 0;
   const totalCarritoDeCompras = document.querySelector('.totalCarritoDeCompras');
@@ -89,33 +90,31 @@ function actualizarTotalCarrito() {
   const productosEnCarritoDeCompras = document.querySelectorAll('.productoEnCarroDeCompras');
 
   productosEnCarritoDeCompras.forEach((productoEnCarroDeCompras) => {
-    const precioDelProductoEnCarrito = productoEnCarroDeCompras.querySelector('.precioProductoUnitarioEnCarrito'
-    );
+    const precioDelProductoEnCarrito = productoEnCarroDeCompras.querySelector('.precioProductoUnitarioEnCarrito');
     const precioProductoUnitarioEnCarrito = Number(
-      precioDelProductoEnCarrito.textContent.replace('$', '')
-    );
-    const cantidadProductoEnCarritoMismo = productoEnCarroDeCompras.querySelector('.cantidadProductoEnCarrito'
-    );
+      precioDelProductoEnCarrito.textContent.replace('$', ''));
+    const cantidadProductoEnCarritoMismo = productoEnCarroDeCompras.querySelector('.cantidadProductoEnCarrito');
     const cantidadProductoEnCarrito = Number(
-      cantidadProductoEnCarritoMismo.value
-    );
+      cantidadProductoEnCarritoMismo.value);
     total = total + precioProductoUnitarioEnCarrito * cantidadProductoEnCarrito;
   });
   totalCarritoDeCompras.innerHTML = ` ${total.toFixed(0)}$`;
 }
-
+// FUNCIÓN PARA BORRAR PRODUCTO DEL CARRITO
 function borrarProductoDelCarrito(e) {
   const botonClick = e.target;
   botonClick.closest('.productoEnCarroDeCompras').remove();
   actualizarTotalCarrito();
 }
 
+// FUNCIÓN QUE NO PERMITE TENER MENOS DE UN PRODUCTO
 function cambiarCantidad(e) {
   const input = e.target;
   input.value <= 0 ? (input.value = 1) : null;
   actualizarTotalCarrito();
 }
 
+// AGREGANDO EVENTO AL BTN COMPRAR
 function botonComprarClick() {
   contenedorCarritoProducto.addEventListener(),(e)=> {
     e.preventDefault();
@@ -123,6 +122,7 @@ function botonComprarClick() {
   actualizarTotalCarrito();
 }
 
+// FUNCIÓN PARA QUE CUANDO TERMINE LA COMPRA SE VACÍE EL CARRITO
 let finalizar = document.querySelector(".volverdelacompra");
 finalizar.addEventListener("click", finalizarcarrito)
 function finalizarcarrito() {
@@ -130,6 +130,7 @@ function finalizarcarrito() {
     actualizarTotalCarrito();
 }
 
+// INICIO DE SESIÓN CON FETCH Y UN JSON CON CLIENTES
 const clientes = "../clientes.json";
 
 fetch(clientes)
